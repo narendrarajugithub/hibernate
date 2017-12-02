@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 30, 2017 9:55:34 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hib.entity.msdb.UserInfo" table="USER_INFO" schema="dbo" catalog="narendra">
+        <id name="userCode" type="big_decimal">
+            <column name="USER_CODE" scale="0" />
+            <generator class="foreign">
+                <param name="property">userAddress</param>
+            </generator>
+        </id>
+        <one-to-one name="userAddress" class="com.hib.entity.msdb.UserAddress" constrained="true" cascade="all"></one-to-one>
+        <property name="userName" type="string">
+            <column name="USER_NAME" length="15" />
+        </property>
+        <property name="userYype" type="string">
+            <column name="USER_YYPE" length="15" />
+        </property>
+        <set name="naUserAuths" table="NA_USER_AUTH" inverse="true" cascade="all" lazy="true" fetch="select">
+            <key>
+                <column name="USER_CODE" scale="0" />
+            </key>
+            <one-to-many class="com.hib.entity.msdb.NaUserAuth" />
+        </set>
+    </class>
+</hibernate-mapping>

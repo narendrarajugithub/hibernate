@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 30, 2017 9:55:34 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hib.entity.msdb.UserAddress" table="USER_ADDRESS" schema="dbo" catalog="narendra">
+        <id name="userCode" type="big_decimal">
+            <column name="USER_CODE" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="street" type="string">
+            <column name="STREET" length="35" />
+        </property>
+        <property name="city" type="string">
+            <column name="CITY" length="20" />
+        </property>
+        <property name="state" type="string">
+            <column name="STATE" length="15" />
+        </property>
+        <property name="mobie" type="big_decimal">
+            <column name="MOBIE" scale="0" />
+        </property>
+        <one-to-one name="userInfo" class="com.hib.entity.msdb.UserInfo" cascade="all"></one-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 23, 2017 11:41:33 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.hib.entity.UserLogInf" table="USER_LOG_INF" schema="NARENDRA">
+        <id name="userSeq" type="int">
+            <column name="USER_SEQ" precision="7" scale="0" />
+            <generator class="foreign">
+                <param name="property">employee</param>
+            </generator>
+        </id>
+        <one-to-one name="employee" class="com.hib.entity.Employee" constrained="true"></one-to-one>
+        <property name="createdOn" type="date">
+            <column name="CREATED_ON" length="7" />
+        </property>
+        <property name="userNameS" type="string">
+            <column name="USER_NAME_S" length="5" />
+        </property>
+    </class>
+</hibernate-mapping>
