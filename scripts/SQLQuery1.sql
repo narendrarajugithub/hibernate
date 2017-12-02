@@ -1,0 +1,1 @@
+select * from NA_USER_AUTH
