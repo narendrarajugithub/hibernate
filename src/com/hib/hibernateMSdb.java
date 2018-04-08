@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.concurrent.locks.Condition;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -20,10 +21,8 @@ public class hibernateMSdb {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//String s=  "jdbc:sqlserver://localhost:1433;" +"user=sa;password=Raja!123;"+"databaseName=narendra;integratedSecurity=true;";
-	Configuration cfg=new Configuration();
+		Configuration cfg=new Configuration();
 	Session sobj=cfg.configure("hibernateMsdb.cfg.xml").buildSessionFactory().openSession();
-	
-	
 	
 	Date d= new Date();
 	SimpleDateFormat sm=new SimpleDateFormat("dd-MM-yy");
@@ -37,7 +36,7 @@ public class hibernateMSdb {
 	
 	
 	UserInfo userInf=new UserInfo();
-	//userInf.setUserCode(1234567l);
+	//userInf.setUserCode(123567l);
 	userInf.setUserName("Nrendr");
 	userInf.setUserYype("Regular");
 	
@@ -47,7 +46,7 @@ public class hibernateMSdb {
 	UsrAddr.setCity("hyderabad");
 	UsrAddr.setMobie(new BigDecimal(9989564577l));
 	UsrAddr.setState("TS");
-	UsrAddr.setUserCode(new BigDecimal(1234567l));
+	UsrAddr.setUserCode(new BigDecimal(123));
 	UsrAddr.setUserInfo(userInf);
 	userInf.setUserAddress(UsrAddr);
 	
@@ -59,6 +58,7 @@ public class hibernateMSdb {
 	System.out.println(sobj.save(UsrAddr));
 	//sobj.save(nUser);
 	tx.commit();
+	sobj.close();
 	}
 
 }

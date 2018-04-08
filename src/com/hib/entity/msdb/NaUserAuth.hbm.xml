@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated Nov 30, 2017 9:55:34 PM by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="com.hib.entity.msdb.NaUserAuth" table="NA_USER_AUTH" schema="dbo" catalog="narendra">
+    <class name="com.hib.entity.msdb.NaUserAuth" table="NA_USER_AUTH" schema="dbo" catalog="narendraraju">
         <id name="userId" type="string">
             <column name="USER_ID" length="10" />
             <generator class="assigned" />

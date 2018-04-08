@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated Nov 30, 2017 9:55:34 PM by Hibernate Tools 3.4.0.CR1 -->
 <hibernate-mapping>
-    <class name="com.hib.entity.msdb.UserAddress" table="USER_ADDRESS" schema="dbo" catalog="narendra">
+    <class name="com.hib.entity.msdb.UserAddress" table="USER_ADDRESS" schema="dbo" catalog="narendraraju">
         <id name="userCode" type="big_decimal">
             <column name="USER_CODE" scale="0" />
             <generator class="assigned" />
